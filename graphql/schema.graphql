@@ -1,10 +1,21 @@
+
+type Torrent {
+    url: String!
+    size: String!
+    size_bytes: Int!
+    quality: String!
+
+}
+
 type Movie {
     id: Int!
-    name: String!
-    score: Int!
+    title: String!
+    rating: Float!
+    summary: String!
+    genres: [String]!
+    torrents : [Torrent]
 }
 
 type Query {
     movies: [Movie]!
-    movie(id: Int!): Movie
-}
+ }

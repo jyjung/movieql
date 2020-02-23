@@ -7,7 +7,9 @@
   "repository": "https://github.com/jyjung/movieql.git",
   "author": "Jung JinYoung ",
   "dependencies": {
-    "graphql-yoga": "^1.18.3"
+    "bluebird": "^3.7.2",
+    "graphql-yoga": "^1.18.3",
+    "node-fetch": "^2.6.0"
   },
   "scripts": {
     "start": "nodemon --exec babel-node index.js"

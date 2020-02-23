@@ -39,37 +39,22 @@ const resolvers = {
 export default resolvers; 
 */
 
-const movies = [
-    {
-        id: 1,
-        name: "Avatar",
-        socre: 99
-    }, 
-    {
-        id: 1,
-        name: "Avatar",
-        socre: 99
-    },
-    {
-        id: 1,
-        name: "Avatar",
-        socre: 99
-    }
-]; 
+// import { getById ,addMovie,deleteMovie} from "./db"; 
+import {getMovies} from "./ytsdb"; 
 
-export const getMovies = () => movies;   
-export const getById = id => {
-    const filteredMovies = movies.filter(movie => movie.id == id);
-    return filteredMovies[0]; 
+const resolvers = {
+    Query: {
+        movies: () => getMovies()  
+        //movie: (_ , {id}) =>  getById(id)
+      
+    }
+    /* 
+    ,Mutation: {
+        addMovie:(_, {name,score}) => addMovie(name,score)  ,
+        deleteMovie: (_,{id}) => deleteMovie(id)
+    }
+    */
 }
 
-export const deleteMovie = id => {
-    const cleanedMovies = movies.filter(movie => movie.id != id); 
-    if(movies.length > cleanedMovies) {
-        movies = cleanedMovies; 
-        return true; 
-    } else {
-        return false; 
-    }
-}
-// 나의 첫번째 GraphQL서버 만들기 #8 Defining Mutations  2:46
+export default resolvers; 
+

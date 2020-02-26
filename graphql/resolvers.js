@@ -40,11 +40,13 @@ export default resolvers;
 */
 
 // import { getById ,addMovie,deleteMovie} from "./db"; 
-import {getMovies} from "./ytsdb"; 
+import {getMovies,findMoviesFromTitle } from "./ytsdb"; 
 
 const resolvers = {
     Query: {
-        movies: () => getMovies()  
+        movies: () => getMovies() ,
+        findMovies: (_, {title}) => findMoviesFromTitle(title)
+
         //movie: (_ , {id}) =>  getById(id)
       
     }

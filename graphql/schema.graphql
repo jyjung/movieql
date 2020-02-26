@@ -18,4 +18,5 @@ type Movie {
 
 type Query {
     movies: [Movie]!
- }
+    findMovies(title: String!):[Movie]
+}

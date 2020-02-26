@@ -10,4 +10,17 @@ export const getMovies = () =>
     .then(json => json.data.movies); 
 
 
+
+export const findMoviesFromTitle = title => {
+    let REQUEST_URL = API_URL + '?'
+    REQUEST_URL += 'query_term=' + title
+    console.log(REQUEST_URL)
+
+    return fetch(REQUEST_URL)
+    .then(res => res.json())
+    .then(json => json.data.movies); 
+}
+
+
+
     

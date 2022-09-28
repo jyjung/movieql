@@ -8,7 +8,7 @@
   "author": "Jung JinYoung ",
   "dependencies": {
     "bluebird": "^3.7.2",
-    "graphql-yoga": "^1.18.3",
+    "graphql-yoga": "^2.13.13",
     "node-fetch": "^2.6.7"
   },
   "scripts": {
